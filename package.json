@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./src/*.html",
-    "predeploy": "rm -rf dist && parcel build ./src/*.html --public-url 'https://github.com/Barbara-D/three_parcel_test.git'",
+    "predeploy": "rm -rf dist && parcel build ./src/*.html --public-url https://barbara-d.github.io/three_parcel_test/",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
