@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./src/*.html",
-    "predeploy": "rm -rf dist && parcel build ./src/*.html --public-url https://barbara-d.github.io/three_parcel_test/",
+    "start": "parcel ./src/*.js",
+    "predeploy": "rm -rf dist && parcel build ./src/*.js --public-url https://barbara-d.github.io/three_parcel_test/",
     "deploy": "gh-pages -d dist"
   },
   "repository": {

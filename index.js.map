@@ -1,0 +1,1 @@
+{"mappings":"AAAA,IAAI,4BAAM,AAAC;AAEX,4BAAM,GAAG,CAAC,CAAC;AAEX,IAAI,yBAAG,GAAG,CAAC,AAAC;AAEZ,OAAO,CAAC,GAAG,CAAC,4BAAM,EAAE,yBAAG,CAAC,CAAC","sources":["src/script.js"],"sourcesContent":["let selint;\r\n\r\nselint = 3;\r\n\r\nlet dev = 3;\r\n\r\nconsole.log(selint, dev);\r\n"],"names":[],"version":3,"file":"index.js.map"}
