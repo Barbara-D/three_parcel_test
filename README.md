@@ -6,7 +6,7 @@ Test run of using parcel to deploy a three.js project on gh pages
 npm run start
 
 //DEPLOY TO GH PAGES
-npm run deploy
+npm run deploy (in bash, bc of linux commands)
 
 //GH PAGE LINK
 https://barbara-d.github.io/three_parcel_test/
