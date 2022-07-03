@@ -2,11 +2,10 @@
   "name": "three_parcel_test",
   "version": "1.0.0",
   "description": "Test run of using parcel to deploy a three.js project on gh pages",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./src/*.js",
-    "predeploy": "rm -rf dist && parcel build ./src/*.js --public-url https://barbara-d.github.io/three_parcel_test/",
+    "start": "parcel ./src/index.html",
+    "predeploy": "rm -rf dist && parcel build ./src/index.html --public-url 'https://barbara-d.github.io/three_parcel_test/'",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
