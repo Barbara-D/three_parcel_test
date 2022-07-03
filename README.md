@@ -10,3 +10,7 @@ npm run deploy
 
 //GH PAGE LINK
 https://barbara-d.github.io/three_parcel_test/
+
+DEPLOYMENT NOTES
+//when not updating properly, clear dist folder
+//resources folder needs to be inside dist folder

@@ -1,31 +1,16 @@
 import "./style.css";
 import * as THREE from "three";
+import { Camera } from "./fundamentals/camera.js";
+import { Skybox } from "./fundamentals/skybox.js";
 
 console.log(THREE);
 
 //Scene
 const scene = new THREE.Scene();
 
-//Blue cube
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshLambertMaterial({ color: 0xfb8e00 });
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
-
-// //Sizes
-// const sizes = {
-//   width: 800,
-//   height: 600,
-// };
-
 //Camera
-const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight
-);
+const camera = new Camera(75, window.innerWidth / window.innerHeight);
 scene.add(camera);
-camera.position.z = 3;
-camera.position.y = 1.2;
 
 // Set up lights
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
@@ -35,11 +20,28 @@ const dirLight = new THREE.DirectionalLight(0xffffff, 0.6);
 dirLight.position.set(0, 20, 5); // x, y, z
 scene.add(dirLight);
 
+const skybox = new Skybox();
+scene.background = skybox.createTexture();
+
+//Blue cube
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+const material = new THREE.MeshLambertMaterial({ color: 0xffffff });
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
+
 //Renderer
 const canvas = document.querySelector(".webgl");
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
   antialias: true,
+  // alpha: true,
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.render(scene, camera);
+// renderer.setClearColor(0xffffff, 0);
+
+animate();
+
+function animate() {
+  renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+}
